@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="215" viewBox="0 0 900 215" role="img" aria-label="Anurag Patel Creative Sandbox Banner">
+  <defs>
+    <linearGradient id="aubBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#110c19"/>
+      <stop offset="55%" stop-color="#1a1126"/>
+      <stop offset="100%" stop-color="#0f111a"/>
+    </linearGradient>
+    <linearGradient id="sunsetGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff6b6b"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <linearGradient id="titleWarm" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fff7ed"/>
+      <stop offset="60%" stop-color="#fdba74"/>
+      <stop offset="100%" stop-color="#fb7185"/>
+    </linearGradient>
+    <linearGradient id="auroraRibbon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff6b6b" stop-opacity="0.28"/>
+      <stop offset="50%" stop-color="#f59e0b" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0.26"/>
+    </linearGradient>
+    <clipPath id="bannerClip">
+      <rect x="2" y="2" width="896" height="211" rx="20"/>
+    </clipPath>
+    <style>
+      @keyframes floatSlow { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-6px); } }
+      @keyframes floatAlt  { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(5px); } }
+      .cardFloat1 { animation: floatSlow 5s ease-in-out infinite; }
+      .cardFloat2 { animation: floatAlt  6s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <g clip-path="url(#bannerClip)">
+    <rect x="2" y="2" width="896" height="211" rx="20" fill="url(#aubBg)"/>
+    <!-- Diagonal flowing aurora waves (distinct from grid aesthetic) -->
+    <path d="M -40 165 C 180 65, 410 235, 650 115 C 770 55, 860 95, 940 40 L 940 230 L -40 230 Z" fill="url(#auroraRibbon)"/>
+    <path d="M -40 190 C 210 115, 440 245, 720 140 C 810 105, 880 120, 940 90" fill="none" stroke="url(#sunsetGrad)" stroke-width="1.5" stroke-opacity="0.45"/>
+    <circle cx="805" cy="48" r="95" fill="#ec4899" fill-opacity="0.11"/>
+    <circle cx="140" cy="185" r="110" fill="#f59e0b" fill-opacity="0.08"/>
+  </g>
+  <rect x="2" y="2" width="896" height="211" rx="20" fill="none" stroke="url(#sunsetGrad)" stroke-opacity="0.55" stroke-width="1.5"/>
+
+  <!-- Left Editorial Header -->
+  <rect x="44" y="30" width="236" height="24" rx="4" fill="#23162d" stroke="#ff6b6b" stroke-opacity="0.45" stroke-width="1"/>
+  <text x="162" y="46" text-anchor="middle" fill="#fdba74" font-family="Consolas, 'Fira Code', monospace" font-size="10.5" font-weight="700" letter-spacing="1.4">FOLIO // @ANURAG200513</text>
+
+  <text x="44" y="108" fill="url(#titleWarm)" font-family="Georgia, 'Segoe UI', serif" font-size="45" font-weight="700" letter-spacing="-0.6">Anurag Patel</text>
+  <text x="46" y="138" fill="#e2d9f3" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="15" font-weight="500">3rd Year CSE Student  •  Hackathon &amp; Full-Stack Builder</text>
+  <text x="46" y="162" fill="#a79bb8" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="13">Crafting geospatial AI prototypes, clean web interfaces &amp; collaborative OSS.</text>
+
+  <!-- Bottom Accent Line + Role Tag -->
+  <rect x="46" y="182" width="54" height="3.5" rx="2" fill="url(#sunsetGrad)"/>
+  <text x="110" y="187" fill="#fb7185" font-family="Consolas, monospace" font-size="11.5" font-weight="700">HACKATHON SANDBOX  |  R&amp;D BUILDER</text>
+
+  <!-- Right Floating Stacked UI Cards (distinct from radar HUD) -->
+  <g class="cardFloat2" transform="translate(618, 34)">
+    <rect x="0" y="0" width="236" height="106" rx="12" fill="#1e152d" fill-opacity="0.9" stroke="#ec4899" stroke-opacity="0.4" stroke-width="1"/>
+    <text x="16" y="24" fill="#f472b6" font-family="Consolas, monospace" font-size="10.5" font-weight="700">// CURRENT SPRINT</text>
+    <text x="16" y="47" fill="#f8fafc" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="700">ORE FINDER-AI</text>
+    <text x="16" y="66" fill="#cbd5e1" font-family="'Segoe UI', sans-serif" font-size="11">Subsurface Voxel &amp; Space ML</text>
+    <rect x="16" y="79" width="76" height="16" rx="3" fill="#2d1a38"/>
+    <text x="54" y="90" text-anchor="middle" fill="#fdba74" font-family="Consolas, monospace" font-size="9.5">PYTHON API</text>
+  </g>
+
+  <g class="cardFloat1" transform="translate(590, 106)">
+    <rect x="0" y="0" width="248" height="90" rx="12" fill="#161024" fill-opacity="0.96" stroke="#f59e0b" stroke-opacity="0.65" stroke-width="1.2"/>
+    <circle cx="18" cy="20" r="4" fill="#22c55e"/>
+    <text x="29" y="24" fill="#fde68a" font-family="Consolas, monospace" font-size="11" font-weight="700">ACHIEVEMENTS UNLOCKED</text>
+    <rect x="16" y="38" width="112" height="22" rx="5" fill="#291c36" stroke="#f59e0b" stroke-opacity="0.4"/>
+    <text x="72" y="53" text-anchor="middle" fill="#fef3c7" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="700">🧠 Galaxy Brain x4</text>
+    <rect x="136" y="38" width="96" height="22" rx="5" fill="#291c36" stroke="#ff6b6b" stroke-opacity="0.4"/>
+    <text x="184" y="53" text-anchor="middle" fill="#fecdd3" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="700">⚡ YOLO &amp; Fast</text>
+    <text x="16" y="79" fill="#9ca3af" font-family="Consolas, monospace" font-size="10">32+ Accepted Q&amp;A Answers • 15+ PRs</text>
+  </g>
+</svg>

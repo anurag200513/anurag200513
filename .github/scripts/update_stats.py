@@ -1,15 +1,10 @@
 #!/usr/bin/env python3
-"""Auto-update assets/stats-card.svg using GitHub GraphQL API."""
-import json
-import os
-import urllib.request
+"""Auto-update assets/radar-telemetry.svg weekly via GitHub GraphQL."""
+import json, math, os, urllib.request
 from pathlib import Path
 
 LOGIN = os.environ.get("TARGET_USER", "anurag200513")
 TOKEN = os.environ["GH_TOKEN"]
-ACCENT1 = "#10b981"
-ACCENT2 = "#38bdf8"
-
 QUERY = """
 query($login: String!) {
   user(login: $login) {
@@ -19,7 +14,6 @@ query($login: String!) {
     repositories(first: 50, ownerAffiliations: OWNER, isFork: false, privacy: PUBLIC) {
       totalCount
       nodes {
-        stargazerCount
         languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
           edges { size node { name color } }
         }
@@ -28,63 +22,53 @@ query($login: String!) {
   }
 }
 """
-
 req = urllib.request.Request(
     "https://api.github.com/graphql",
-    data=json.dumps({"query": QUERY, "variables": {"login": LOGIN}}).encode("utf-8"),
-    headers={"Authorization": f"bearer {TOKEN}", "Content-Type": "application/json", "User-Agent": "profile-stats-updater"},
+    data=json.dumps({"query": QUERY, "variables": {"login": LOGIN}}).encode(),
+    headers={"Authorization": f"bearer {TOKEN}", "Content-Type": "application/json", "User-Agent": "radar-updater"},
 )
-user = json.loads(urllib.request.urlopen(req).read().decode("utf-8"))["data"]["user"]
+user = json.loads(urllib.request.urlopen(req).read().decode())["data"]["user"]
 repos = user["repositories"]["nodes"]
-stars = sum(r["stargazerCount"] for r in repos)
-lang_bytes = {}
+lb = {}
 for r in repos:
-    for edge in r["languages"]["edges"]:
-        name = edge["node"]["name"]
-        color = edge["node"]["color"] or "#8b949e"
-        lang_bytes[name] = (lang_bytes.get(name, (0, color))[0] + edge["size"], color)
-total = sum(v[0] for v in lang_bytes.values()) or 1
-top = sorted([(k, v[0], v[0] * 100.0 / total, v[1]) for k, v in lang_bytes.items()], key=lambda x: x[1], reverse=True)[:5]
+    for e in r["languages"]["edges"]:
+        n, c = e["node"]["name"], (e["node"]["color"] or "#f59e0b")
+        lb[n] = (lb.get(n, (0, c))[0] + e["size"], c)
+tot = sum(v[0] for v in lb.values()) or 1
+top = sorted([(k, v[0], v[0] * 100.0 / tot, v[1]) for k, v in lb.items()], key=lambda x: x[1], reverse=True)[:4]
 
-bar_x, bar_w, cur_x = 486, 384, 486.0
-segments, legend = [], []
-for idx, (name, _sz, pct, color) in enumerate(top):
-    seg_w = (bar_x + bar_w) - cur_x if idx == len(top) - 1 else bar_w * (pct / 100.0)
-    segments.append(f'<rect x="{cur_x:.1f}" y="76" width="{max(seg_w, 2.0):.1f}" height="12" fill="{color}"/>')
-    cur_x += seg_w
-    col, row = idx % 2, idx // 2
-    lx, ly = 486 + col * 196, 114 + row * 28
-    legend.append(
-        f'<circle cx="{lx + 6}" cy="{ly - 4}" r="5" fill="{color}"/>'
-        f'<text x="{lx + 18}" y="{ly}" fill="#e2e8f0" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12.5" font-weight="600">{name}</text>'
-        f'<text x="{lx + 178}" y="{ly}" text-anchor="end" fill="#94a3b8" font-family="Consolas, monospace" font-size="12">{pct:.1f}%</text>'
-    )
+cx, cy, max_r = 200.0, 138.0, 70.0
+axes = [("JavaScript",0.90,-90),("HTML / CSS",0.88,-30),("Python APIs",0.82,30),("Git &amp; Collab",0.86,90),("Prototyping",0.84,150),("UI Craft",0.85,210)]
+pt = lambda r, d: (cx + r * math.cos(math.radians(d)), cy + r * math.sin(math.radians(d)))
+rings = [f'<polygon points="{" ".join(f"{pt(max_r*f,a[2])[0]:.1f},{pt(max_r*f,a[2])[1]:.1f}" for a in axes)}" fill="none" stroke="#36294b" stroke-width="1"/>' for f in (0.33,0.66,1.0)]
+spokes, labels, dpts, dots = [], [], [], []
+for n, v, d in axes:
+    ox, oy = pt(max_r, d); spokes.append(f'<line x1="{cx:.1f}" y1="{cy:.1f}" x2="{ox:.1f}" y2="{oy:.1f}" stroke="#36294b" stroke-width="1"/>')
+    dx, dy = pt(max_r*v, d); dpts.append(f"{dx:.1f},{dy:.1f}"); dots.append(f'<circle cx="{dx:.1f}" cy="{dy:.1f}" r="4" fill="#f59e0b" stroke="#130e1c" stroke-width="1.5"/>')
+    lx, ly = pt(max_r+18, d)
+    anc = "middle" if d in (-90,90) else ("start" if -89<d<89 else "end")
+    ly += (-2 if d==-90 else (10 if d==90 else 4))
+    labels.append(f'<text x="{lx:.1f}" y="{ly:.1f}" text-anchor="{anc}" fill="#e2d9f3" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11.5" font-weight="600">{n}</text>')
 
-svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="900" height="215" viewBox="0 0 900 215" role="img" aria-label="GitHub Telemetry and Language Stats">
-  <defs><clipPath id="barClip"><rect x="486" y="76" width="384" height="12" rx="6"/></clipPath></defs>
-  <rect x="2" y="2" width="438" height="211" rx="14" fill="#0d1117" stroke="{ACCENT1}" stroke-opacity="0.35" stroke-width="1.3"/>
-  <text x="26" y="34" fill="#ffffff" font-family="Segoe UI, Ubuntu, sans-serif" font-size="15.5" font-weight="700">⚡ GitHub Telemetry</text>
-  <rect x="330" y="18" width="88" height="22" rx="11" fill="#161f30" stroke="{ACCENT1}" stroke-opacity="0.4" stroke-width="1"/>
-  <text x="374" y="33" text-anchor="middle" fill="{ACCENT1}" font-family="Consolas, monospace" font-size="10.5" font-weight="700">SINCE {user['createdAt'][:4]}</text>
-  <rect x="24" y="52" width="190" height="66" rx="10" fill="#131924" stroke="#243045" stroke-width="1"/>
-  <text x="40" y="75" fill="#94a3b8" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11.5" font-weight="600">PUBLIC REPOS</text>
-  <text x="40" y="104" fill="{ACCENT1}" font-family="Consolas, monospace" font-size="24" font-weight="800">{user['repositories']['totalCount']}</text>
-  <rect x="228" y="52" width="190" height="66" rx="10" fill="#131924" stroke="#243045" stroke-width="1"/>
-  <text x="244" y="75" fill="#94a3b8" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11.5" font-weight="600">CONTRIBUTIONS (1Y)</text>
-  <text x="244" y="104" fill="#22c55e" font-family="Consolas, monospace" font-size="24" font-weight="800">{user['contributionsCollection']['contributionCalendar']['totalContributions']}</text>
-  <rect x="24" y="128" width="190" height="66" rx="10" fill="#131924" stroke="#243045" stroke-width="1"/>
-  <text x="40" y="151" fill="#94a3b8" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11.5" font-weight="600">STARS EARNED</text>
-  <text x="40" y="180" fill="#fbbf24" font-family="Consolas, monospace" font-size="24" font-weight="800">{stars}</text>
-  <rect x="228" y="128" width="190" height="66" rx="10" fill="#131924" stroke="#243045" stroke-width="1"/>
-  <text x="244" y="151" fill="#94a3b8" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11.5" font-weight="600">PULL REQUESTS</text>
-  <text x="244" y="180" fill="{ACCENT2}" font-family="Consolas, monospace" font-size="24" font-weight="800">{user['pullRequests']['totalCount']}</text>
-  <rect x="460" y="2" width="438" height="211" rx="14" fill="#0d1117" stroke="{ACCENT2}" stroke-opacity="0.35" stroke-width="1.3"/>
-  <text x="486" y="34" fill="#ffffff" font-family="Segoe UI, Ubuntu, sans-serif" font-size="15.5" font-weight="700">🧬 Language Distribution</text>
-  <text x="870" y="34" text-anchor="end" fill="#64748b" font-family="Consolas, monospace" font-size="11">@{LOGIN}</text>
-  <rect x="486" y="76" width="384" height="12" rx="6" fill="#1e293b"/>
-  <g clip-path="url(#barClip)">{''.join(segments)}</g>
-  {''.join(legend)}
-  <text x="486" y="196" fill="#64748b" font-family="Consolas, monospace" font-size="10.5">Weighted by bytes across original public repositories</text>
+bx, bw, cur = 26, 348, 26.0
+segs, leg = [], []
+for i, (n, _s, p, c) in enumerate(top):
+    sw = (bx+bw)-cur if i==len(top)-1 else bw*(p/100.0)
+    segs.append(f'<rect x="{cur:.1f}" y="314" width="{max(sw,2.0):.1f}" height="10" fill="{c}"/>'); cur += sw
+    tx, ty = 26+(i%2)*182, 346+(i//2)*22
+    leg.append(f'<circle cx="{tx+5}" cy="{ty-4}" r="4.5" fill="{c}"/><text x="{tx+15}" y="{ty}" fill="#e2d9f3" font-family="Segoe UI, sans-serif" font-size="11.5" font-weight="600">{n}</text><text x="{tx+162}" y="{ty}" text-anchor="end" fill="#a79bb8" font-family="Consolas, monospace" font-size="11">{p:.1f}%</text>')
+
+svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="400" height="390" viewBox="0 0 400 390" role="img" aria-label="Skill Radar and GitHub Metrics">
+  <defs><linearGradient id="radFill" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ff6b6b" stop-opacity="0.42"/><stop offset="100%" stop-color="#f59e0b" stop-opacity="0.32"/></linearGradient><clipPath id="u2BarClip"><rect x="26" y="314" width="348" height="10" rx="5"/></clipPath></defs>
+  <rect x="2" y="2" width="396" height="386" rx="16" fill="#120d1b" stroke="#36294b" stroke-width="1.4"/>
+  <text x="24" y="32" fill="#fff7ed" font-family="Segoe UI, Ubuntu, sans-serif" font-size="14.5" font-weight="700">✦ Stack Radar &amp; Snapshot</text>
+  <text x="374" y="32" text-anchor="end" fill="#f59e0b" font-family="Consolas, monospace" font-size="10.5" font-weight="700">SINCE {user['createdAt'][:4]}</text>
+  {"".join(rings)}{"".join(spokes)}<polygon points="{' '.join(dpts)}" fill="url(#radFill)" stroke="#f59e0b" stroke-width="2"/>{"".join(dots)}{"".join(labels)}
+  <line x1="24" y1="254" x2="376" y2="254" stroke="#2c223d" stroke-width="1"/>
+  <rect x="24" y="266" width="80" height="36" rx="8" fill="#1a1327"/><text x="64" y="281" text-anchor="middle" fill="#a79bb8" font-family="Consolas, monospace" font-size="9">REPOS</text><text x="64" y="296" text-anchor="middle" fill="#ff6b6b" font-family="Consolas, monospace" font-size="14" font-weight="700">{user['repositories']['totalCount']}</text>
+  <rect x="114" y="266" width="84" height="36" rx="8" fill="#1a1327"/><text x="156" y="281" text-anchor="middle" fill="#a79bb8" font-family="Consolas, monospace" font-size="9">CONTRIBS</text><text x="156" y="296" text-anchor="middle" fill="#f59e0b" font-family="Consolas, monospace" font-size="14" font-weight="700">{user['contributionsCollection']['contributionCalendar']['totalContributions']}</text>
+  <rect x="208" y="266" width="76" height="36" rx="8" fill="#1a1327"/><text x="246" y="281" text-anchor="middle" fill="#a79bb8" font-family="Consolas, monospace" font-size="9">PRs</text><text x="246" y="296" text-anchor="middle" fill="#ec4899" font-family="Consolas, monospace" font-size="14" font-weight="700">{user['pullRequests']['totalCount']}</text>
+  <rect x="294" y="266" width="82" height="36" rx="8" fill="#1a1327"/><text x="335" y="281" text-anchor="middle" fill="#a79bb8" font-family="Consolas, monospace" font-size="9">GALAXY</text><text x="335" y="296" text-anchor="middle" fill="#fde68a" font-family="Consolas, monospace" font-size="14" font-weight="700">x4 Gold</text>
+  <rect x="26" y="314" width="348" height="10" rx="5" fill="#231a33"/><g clip-path="url(#u2BarClip)">{"".join(segs)}</g>{"".join(leg)}
 </svg>"""
-
-Path("assets/stats-card.svg").write_text(svg, encoding="utf-8")
+Path("assets/radar-telemetry.svg").write_text(svg, encoding="utf-8")

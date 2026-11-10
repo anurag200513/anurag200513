@@ -1,69 +1,84 @@
 <div align="center">
-  <img src="./assets/hero-banner.svg" width="100%" alt="Anurag Patel — 3rd Year CSE Student" />
+  <img src="./assets/aurora-header.svg" width="100%" alt="Anurag Patel — Folio Header" />
 </div>
 
 <br/>
 
 <div align="center">
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=19&duration=3200&pause=1000&color=10B981&center=true&vCenter=true&width=760&lines=3rd+Year+CSE+Student+%E2%80%A2+Anurag+Patel;Hackathon+Builder+%7C+Space+%26+AI+Web+Platforms;Clean+Frontend+HUDs+%26+Python+Backends;Open+Source+Collaborator+%26+Problem+Solver." alt="Typing SVG" />
-  </a>
+  <img src="./assets/dossier-bento.svg" width="100%" alt="Anurag Patel Dossier Bento" />
 </div>
 
 <br/>
 
-<div align="center">
-  <img src="./assets/about-terminal.svg" width="100%" alt="About Anurag Patel Terminal" />
-</div>
+<table>
+<tr>
+<td width="56%" valign="top">
+
+### 🧭 Featured Builds &amp; Contributions
+
+- 🚀 **[ORE FINDER-AI (`hackthon`)](https://github.com/anurag200513/hackthon)**
+  Space remote-sensing &amp; subsurface voxel mining intelligence platform with a custom Python REST server &amp; `vercel.json` edge setup.
+  `Python` · `JavaScript` · `HTML5` · `CSS3`
+
+- 🎨 **[Personal Web Playground (`My-website`)](https://github.com/anurag200513/My-website)**
+  Clean multi-page HTML/CSS architecture, static layouts, and cross-account collaboration sandbox.
+  `HTML5` · `CSS3` · `Git`
+
+- 🌡️ **[ThermaGuard (`anurag2005930/temp`)](https://github.com/anurag2005930/temp)**
+  Upstream collaborator on real-time Android ADB CPU/battery thermal telemetry &amp; API documentation.
+  `Python` · `ADB` · `SSE`
+
+- ⚡ **[CPU &amp; GPU Test Bench (`anurag2005930/cpu-gpu-benchmark`)](https://github.com/anurag2005930/cpu-gpu-benchmark)**
+  Flagship systems project from my primary lab — Native CUDA Driver API + NVML hardware benchmarking.
+  `Python` · `CUDA` · `FastAPI`
+
+---
+
+### 🏅 Unlocked Milestones
+
+| Achievement | Tier / Progress | Highlights |
+|---|---|---|
+| 🧠 **Galaxy Brain** | **x4 (Gold — 100%)** | 32+ accepted Q&amp;A answers (`temp#50`) |
+| ⚡ **Quickdraw** | **Unlocked** | Fast issue/PR triage (`My-website#1`) |
+| 🔥 **YOLO** | **Unlocked** | Shipped direct merge (`My-website#2`) |
+
+</td>
+<td width="44%" valign="top" align="center">
+  <img src="./assets/radar-telemetry.svg" width="100%" alt="Skill Radar and GitHub Snapshot" />
+</td>
+</tr>
+</table>
 
 <br/>
 
-### 🛠️ Tech Stack &amp; Core Arsenal
+### 🧩 Categorized Toolkit
 
-<div align="center">
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=py,js,html,css,fastapi,opencv,git,github,vscode,vercel&theme=dark" alt="Tech Stack Icons" />
-  </a>
-  <br/><br/>
-  <img src="https://img.shields.io/badge/Python-HTTP_%26_Voxel_Engine-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" /> <img src="https://img.shields.io/badge/JavaScript-Interactive_Dashboards-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white" alt="JavaScript" /> <img src="https://img.shields.io/badge/HTML5_%26_CSS3-Glassmorphic_UIs-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5_%26_CSS3" /> <img src="https://img.shields.io/badge/Vercel-Edge_Deployment-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" />
-</div>
+| Domain | Stack |
+|---|---|
+| **Core Languages** | ![Python](https://img.shields.io/badge/Python-140F1E?style=flat-square&logo=python&logoColor=F59E0B) ![JavaScript](https://img.shields.io/badge/JavaScript-140F1E?style=flat-square&logo=javascript&logoColor=F7DF1E) ![HTML5](https://img.shields.io/badge/HTML5-140F1E?style=flat-square&logo=html5&logoColor=FF6B6B) ![CSS3](https://img.shields.io/badge/CSS3-140F1E?style=flat-square&logo=css3&logoColor=38BDF8) |
+| **Web &amp; APIs** | ![FastAPI](https://img.shields.io/badge/FastAPI-140F1E?style=flat-square&logo=fastapi&logoColor=10B981) ![HTTP](https://img.shields.io/badge/Python_HTTP_Server-140F1E?style=flat-square&logo=python&logoColor=EC4899) ![OpenCV](https://img.shields.io/badge/OpenCV-140F1E?style=flat-square&logo=opencv&logoColor=FF6B6B) |
+| **Workflow &amp; Cloud** | ![Git](https://img.shields.io/badge/Git-140F1E?style=flat-square&logo=git&logoColor=F05032) ![GitHub](https://img.shields.io/badge/GitHub-140F1E?style=flat-square&logo=github&logoColor=FFFFFF) ![Vercel](https://img.shields.io/badge/Vercel-140F1E?style=flat-square&logo=vercel&logoColor=FFFFFF) ![VS Code](https://img.shields.io/badge/VS_Code-140F1E?style=flat-square&logo=visualstudiocode&logoColor=F59E0B) |
 
-<br/>
-
-### 🚀 Featured Engineering Projects
-
-<p align="center">
-  <a href="https://github.com/anurag200513/hackthon"><img src="./assets/proj-hackthon.svg" width="49%" alt="hackthon (ORE FINDER-AI)" /></a>
-  <a href="https://github.com/anurag200513/My-website"><img src="./assets/proj-website.svg" width="49%" alt="My-website" /></a>
-  <br/>
-  <a href="https://github.com/anurag2005930/temp"><img src="./assets/proj-temp-contrib.svg" width="49%" alt="temp (ThermaGuard Contrib)" /></a>
-  <a href="https://github.com/anurag2005930/cpu-gpu-benchmark"><img src="./assets/proj-benchmark-link.svg" width="49%" alt="cpu-gpu-benchmark (Main Lab)" /></a>
-</p>
+<details>
+<summary><b>🎓 3rd Year CSE Focus &amp; Cross-Account Links (click to expand)</b></summary>
 
 <br/>
 
-### 📊 Live GitHub Telemetry &amp; Streak
+- **Name:** Anurag Patel
+- **Degree:** B.Tech in Computer Science &amp; Engineering (3rd Year)
+- **Primary Engineering Lab:** [github.com/anurag2005930](https://github.com/anurag2005930) (Systems Benchmarks, CUDA/NVML Telemetry, Edge Biometric AI)
+- **Sandbox Focus:** Hackathon prototypes, clean browser dashboards, and open-source collaboration
 
-<div align="center">
-  <img src="./assets/stats-card.svg" width="100%" alt="GitHub Telemetry and Language Distribution" />
-  <br/><br/>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=anurag200513&theme=tokyonight&hide_border=true&ring=10B981&fire=10B981&currStreakLabel=38BDF8&background=0d1117" alt="GitHub Streak" />
-</div>
-
-<br/>
-
-### 🌐 Connect &amp; Profile Ecosystem
-
-<div align="center">
-  <a href="https://github.com/anurag2005930">
-    <img src="https://img.shields.io/badge/anurag2005930-Primary_Systems_%26_AI_Lab_(@anurag2005930)-0d1117?style=for-the-badge&logo=github&logoColor=10B981" alt="Linked Profile" />
-  </a>
-  <img src="https://img.shields.io/badge/Galaxy_Brain-x4_Gold-7C3AED?style=for-the-badge&logo=github&logoColor=white" alt="Galaxy Brain x4" />
-  <img src="https://img.shields.io/badge/CSE_Student-3rd_Year-0EA5E9?style=for-the-badge&logo=readthedocs&logoColor=white" alt="3rd Year CSE" />
-</div>
+</details>
 
 <br/>
 
 <div align="center">
-  <img src="./assets/footer-wave.svg" width="100%" alt="Footer Wave" />
+
+> *"Design with intention. Prototype fast. Ship things that work."* — **Anurag Patel**
+
+[![Main Lab](https://img.shields.io/badge/Main_Engineering_Lab-%40anurag2005930-FF6B6B?style=flat-square&logo=github&logoColor=white)](https://github.com/anurag2005930)
+![3rd Year CSE](https://img.shields.io/badge/B.Tech_CSE-3rd_Year-F59E0B?style=flat-square)
+![Galaxy Brain x4](https://img.shields.io/badge/Galaxy_Brain-x4_Gold-EC4899?style=flat-square)
+
 </div>

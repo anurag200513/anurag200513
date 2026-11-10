@@ -1,4 +1,4 @@
-name: Refresh Profile Telemetry
+name: Refresh Profile Radar Telemetry
 
 on:
   schedule:
@@ -9,14 +9,14 @@ permissions:
   contents: write
 
 jobs:
-  update-stats:
+  update-radar:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Update stats-card.svg
+      - name: Update radar-telemetry.svg
         env:
           GH_TOKEN: ${{ github.token }}
           TARGET_USER: ${{ github.repository_owner }}
@@ -25,5 +25,5 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/stats-card.svg
-          git diff --cached --quiet || (git commit -m "chore: refresh live telemetry stats" && git push)
+          git add assets/radar-telemetry.svg
+          git diff --cached --quiet || (git commit -m "chore: refresh radar telemetry" && git push)
