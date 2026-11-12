@@ -1,41 +1,41 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="400" height="390" viewBox="0 0 400 390" role="img" aria-label="Skill Radar and GitHub Metrics">
   <defs>
     <linearGradient id="radFill" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ff6b6b" stop-opacity="0.42"/>
-      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.32"/>
+      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0.38"/>
     </linearGradient>
     <clipPath id="u2BarClip"><rect x="26" y="314" width="348" height="10" rx="5"/></clipPath>
   </defs>
 
-  <rect x="2" y="2" width="396" height="386" rx="16" fill="#120d1b" stroke="#36294b" stroke-width="1.4"/>
-  <text x="24" y="32" fill="#fff7ed" font-family="Segoe UI, Ubuntu, sans-serif" font-size="14.5" font-weight="700">✦ Stack Radar &amp; Snapshot</text>
-  <text x="374" y="32" text-anchor="end" fill="#f59e0b" font-family="Consolas, monospace" font-size="10.5" font-weight="700">SINCE 2022</text>
+  <rect x="2" y="2" width="396" height="386" rx="16" fill="#07131e" stroke="#163a4a" stroke-width="1.4"/>
+  <text x="24" y="32" fill="#f0f9ff" font-family="Segoe UI, Ubuntu, sans-serif" font-size="14.5" font-weight="700">✦ Stack Radar &amp; Snapshot</text>
+  <text x="374" y="32" text-anchor="end" fill="#34d399" font-family="Consolas, monospace" font-size="10.5" font-weight="700">SINCE 2022</text>
 
-  <polygon points="200.0,114.9 220.0,126.5 220.0,149.6 200.0,161.1 180.0,149.6 180.0,126.5" fill="none" stroke="#36294b" stroke-width="1"/><polygon points="200.0,91.8 240.0,114.9 240.0,161.1 200.0,184.2 160.0,161.1 160.0,114.9" fill="none" stroke="#36294b" stroke-width="1"/><polygon points="200.0,68.0 260.6,103.0 260.6,173.0 200.0,208.0 139.4,173.0 139.4,103.0" fill="none" stroke="#36294b" stroke-width="1"/>
-  <line x1="200.0" y1="138.0" x2="200.0" y2="68.0" stroke="#36294b" stroke-width="1"/><line x1="200.0" y1="138.0" x2="260.6" y2="103.0" stroke="#36294b" stroke-width="1"/><line x1="200.0" y1="138.0" x2="260.6" y2="173.0" stroke="#36294b" stroke-width="1"/><line x1="200.0" y1="138.0" x2="200.0" y2="208.0" stroke="#36294b" stroke-width="1"/><line x1="200.0" y1="138.0" x2="139.4" y2="173.0" stroke="#36294b" stroke-width="1"/><line x1="200.0" y1="138.0" x2="139.4" y2="103.0" stroke="#36294b" stroke-width="1"/>
-  <polygon points="200.0,75.0 253.3,107.2 249.7,166.7 200.0,198.2 149.1,167.4 148.5,108.2" fill="url(#radFill)" stroke="#f59e0b" stroke-width="2"/>
-  <circle cx="200.0" cy="75.0" r="4" fill="#f59e0b" stroke="#130e1c" stroke-width="1.5"/><circle cx="253.3" cy="107.2" r="4" fill="#f59e0b" stroke="#130e1c" stroke-width="1.5"/><circle cx="249.7" cy="166.7" r="4" fill="#f59e0b" stroke="#130e1c" stroke-width="1.5"/><circle cx="200.0" cy="198.2" r="4" fill="#f59e0b" stroke="#130e1c" stroke-width="1.5"/><circle cx="149.1" cy="167.4" r="4" fill="#f59e0b" stroke="#130e1c" stroke-width="1.5"/><circle cx="148.5" cy="108.2" r="4" fill="#f59e0b" stroke="#130e1c" stroke-width="1.5"/>
-  <text x="200.0" y="48.0" text-anchor="middle" fill="#e2d9f3" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11.5" font-weight="600">JavaScript</text><text x="276.2" y="98.0" text-anchor="start" fill="#e2d9f3" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11.5" font-weight="600">HTML / CSS</text><text x="276.2" y="186.0" text-anchor="start" fill="#e2d9f3" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11.5" font-weight="600">Python APIs</text><text x="200.0" y="236.0" text-anchor="middle" fill="#e2d9f3" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11.5" font-weight="600">Git &amp; Collab</text><text x="123.8" y="186.0" text-anchor="end" fill="#e2d9f3" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11.5" font-weight="600">Prototyping</text><text x="123.8" y="98.0" text-anchor="end" fill="#e2d9f3" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11.5" font-weight="600">UI Craft</text>
+  <polygon points="200.0,114.9 220.0,126.5 220.0,149.6 200.0,161.1 180.0,149.6 180.0,126.5" fill="none" stroke="#163547" stroke-width="1"/><polygon points="200.0,91.8 240.0,114.9 240.0,161.1 200.0,184.2 160.0,161.1 160.0,114.9" fill="none" stroke="#163547" stroke-width="1"/><polygon points="200.0,68.0 260.6,103.0 260.6,173.0 200.0,208.0 139.4,173.0 139.4,103.0" fill="none" stroke="#163547" stroke-width="1"/>
+  <line x1="200.0" y1="138.0" x2="200.0" y2="68.0" stroke="#163547" stroke-width="1"/><line x1="200.0" y1="138.0" x2="260.6" y2="103.0" stroke="#163547" stroke-width="1"/><line x1="200.0" y1="138.0" x2="260.6" y2="173.0" stroke="#163547" stroke-width="1"/><line x1="200.0" y1="138.0" x2="200.0" y2="208.0" stroke="#163547" stroke-width="1"/><line x1="200.0" y1="138.0" x2="139.4" y2="173.0" stroke="#163547" stroke-width="1"/><line x1="200.0" y1="138.0" x2="139.4" y2="103.0" stroke="#163547" stroke-width="1"/>
+  <polygon points="200.0,75.0 253.3,107.2 249.7,166.7 200.0,199.6 149.1,167.4 148.5,108.2" fill="url(#radFill)" stroke="#10b981" stroke-width="2"/>
+  <circle cx="200.0" cy="75.0" r="4" fill="#34d399" stroke="#07131e" stroke-width="1.5"/><circle cx="253.3" cy="107.2" r="4" fill="#34d399" stroke="#07131e" stroke-width="1.5"/><circle cx="249.7" cy="166.7" r="4" fill="#34d399" stroke="#07131e" stroke-width="1.5"/><circle cx="200.0" cy="199.6" r="4" fill="#34d399" stroke="#07131e" stroke-width="1.5"/><circle cx="149.1" cy="167.4" r="4" fill="#34d399" stroke="#07131e" stroke-width="1.5"/><circle cx="148.5" cy="108.2" r="4" fill="#34d399" stroke="#07131e" stroke-width="1.5"/>
+  <text x="200.0" y="48.0" text-anchor="middle" fill="#bae6fd" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11.5" font-weight="600">JavaScript</text><text x="276.2" y="98.0" text-anchor="start" fill="#bae6fd" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11.5" font-weight="600">HTML / CSS</text><text x="276.2" y="186.0" text-anchor="start" fill="#bae6fd" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11.5" font-weight="600">Python APIs</text><text x="200.0" y="236.0" text-anchor="middle" fill="#bae6fd" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11.5" font-weight="600">Git &amp; Collab</text><text x="123.8" y="186.0" text-anchor="end" fill="#bae6fd" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11.5" font-weight="600">Prototyping</text><text x="123.8" y="98.0" text-anchor="end" fill="#bae6fd" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11.5" font-weight="600">UI Craft</text>
 
   <!-- Compact 4-metric strip -->
-  <line x1="24" y1="254" x2="376" y2="254" stroke="#2c223d" stroke-width="1"/>
-  <rect x="24" y="266" width="80" height="36" rx="8" fill="#1a1327"/>
-  <text x="64" y="281" text-anchor="middle" fill="#a79bb8" font-family="Consolas, monospace" font-size="9">REPOS</text>
-  <text x="64" y="296" text-anchor="middle" fill="#ff6b6b" font-family="Consolas, monospace" font-size="14" font-weight="700">3</text>
+  <line x1="24" y1="254" x2="376" y2="254" stroke="#153243" stroke-width="1"/>
+  <rect x="24" y="266" width="80" height="36" rx="8" fill="#0c2030"/>
+  <text x="64" y="281" text-anchor="middle" fill="#94a3b8" font-family="Consolas, monospace" font-size="9">REPOS</text>
+  <text x="64" y="296" text-anchor="middle" fill="#38bdf8" font-family="Consolas, monospace" font-size="14" font-weight="700">3</text>
 
-  <rect x="114" y="266" width="84" height="36" rx="8" fill="#1a1327"/>
-  <text x="156" y="281" text-anchor="middle" fill="#a79bb8" font-family="Consolas, monospace" font-size="9">CONTRIBS</text>
-  <text x="156" y="296" text-anchor="middle" fill="#f59e0b" font-family="Consolas, monospace" font-size="14" font-weight="700">109</text>
+  <rect x="114" y="266" width="84" height="36" rx="8" fill="#0c2030"/>
+  <text x="156" y="281" text-anchor="middle" fill="#94a3b8" font-family="Consolas, monospace" font-size="9">CONTRIBS</text>
+  <text x="156" y="296" text-anchor="middle" fill="#34d399" font-family="Consolas, monospace" font-size="14" font-weight="700">117</text>
 
-  <rect x="208" y="266" width="76" height="36" rx="8" fill="#1a1327"/>
-  <text x="246" y="281" text-anchor="middle" fill="#a79bb8" font-family="Consolas, monospace" font-size="9">PRs</text>
-  <text x="246" y="296" text-anchor="middle" fill="#ec4899" font-family="Consolas, monospace" font-size="14" font-weight="700">15</text>
+  <rect x="208" y="266" width="76" height="36" rx="8" fill="#0c2030"/>
+  <text x="246" y="281" text-anchor="middle" fill="#94a3b8" font-family="Consolas, monospace" font-size="9">PRs</text>
+  <text x="246" y="296" text-anchor="middle" fill="#0ea5e9" font-family="Consolas, monospace" font-size="14" font-weight="700">19</text>
 
-  <rect x="294" y="266" width="82" height="36" rx="8" fill="#1a1327"/>
-  <text x="335" y="281" text-anchor="middle" fill="#a79bb8" font-family="Consolas, monospace" font-size="9">GALAXY</text>
-  <text x="335" y="296" text-anchor="middle" fill="#fde68a" font-family="Consolas, monospace" font-size="14" font-weight="700">x4 Gold</text>
+  <rect x="294" y="266" width="82" height="36" rx="8" fill="#0c2030"/>
+  <text x="335" y="281" text-anchor="middle" fill="#94a3b8" font-family="Consolas, monospace" font-size="9">GALAXY</text>
+  <text x="335" y="296" text-anchor="middle" fill="#6ee7b7" font-family="Consolas, monospace" font-size="14" font-weight="700">x4 Gold</text>
 
-  <rect x="26" y="314" width="348" height="10" rx="5" fill="#231a33"/>
+  <rect x="26" y="314" width="348" height="10" rx="5" fill="#102938"/>
   <g clip-path="url(#u2BarClip)"><rect x="26.0" y="314" width="132.4" height="10" fill="#f1e05a"/><rect x="158.4" y="314" width="78.1" height="10" fill="#e34c26"/><rect x="236.5" y="314" width="76.3" height="10" fill="#663399"/><rect x="312.8" y="314" width="61.2" height="10" fill="#3572A5"/></g>
-  <circle cx="31" cy="342" r="4.5" fill="#f1e05a"/><text x="41" y="346" fill="#e2d9f3" font-family="Segoe UI, sans-serif" font-size="11.5" font-weight="600">JavaScript</text><text x="188" y="346" text-anchor="end" fill="#a79bb8" font-family="Consolas, monospace" font-size="11">38.0%</text><circle cx="213" cy="342" r="4.5" fill="#e34c26"/><text x="223" y="346" fill="#e2d9f3" font-family="Segoe UI, sans-serif" font-size="11.5" font-weight="600">HTML</text><text x="370" y="346" text-anchor="end" fill="#a79bb8" font-family="Consolas, monospace" font-size="11">22.5%</text><circle cx="31" cy="364" r="4.5" fill="#663399"/><text x="41" y="368" fill="#e2d9f3" font-family="Segoe UI, sans-serif" font-size="11.5" font-weight="600">CSS</text><text x="188" y="368" text-anchor="end" fill="#a79bb8" font-family="Consolas, monospace" font-size="11">21.9%</text><circle cx="213" cy="364" r="4.5" fill="#3572A5"/><text x="223" y="368" fill="#e2d9f3" font-family="Segoe UI, sans-serif" font-size="11.5" font-weight="600">Python</text><text x="370" y="368" text-anchor="end" fill="#a79bb8" font-family="Consolas, monospace" font-size="11">17.6%</text>
+  <circle cx="31" cy="342" r="4.5" fill="#f1e05a"/><text x="41" y="346" fill="#e0f2fe" font-family="Segoe UI, sans-serif" font-size="11.5" font-weight="600">JavaScript</text><text x="188" y="346" text-anchor="end" fill="#94a3b8" font-family="Consolas, monospace" font-size="11">38.0%</text><circle cx="213" cy="342" r="4.5" fill="#e34c26"/><text x="223" y="346" fill="#e0f2fe" font-family="Segoe UI, sans-serif" font-size="11.5" font-weight="600">HTML</text><text x="370" y="346" text-anchor="end" fill="#94a3b8" font-family="Consolas, monospace" font-size="11">22.5%</text><circle cx="31" cy="364" r="4.5" fill="#663399"/><text x="41" y="368" fill="#e0f2fe" font-family="Segoe UI, sans-serif" font-size="11.5" font-weight="600">CSS</text><text x="188" y="368" text-anchor="end" fill="#94a3b8" font-family="Consolas, monospace" font-size="11">21.9%</text><circle cx="213" cy="364" r="4.5" fill="#3572A5"/><text x="223" y="368" fill="#e0f2fe" font-family="Segoe UI, sans-serif" font-size="11.5" font-weight="600">Python</text><text x="370" y="368" text-anchor="end" fill="#94a3b8" font-family="Consolas, monospace" font-size="11">17.6%</text>
 </svg>
